@@ -19,7 +19,19 @@ class Solution:
             i=i+1
             j=j-1
         return True
-#--------------------------SecondTry,DP--------------------------超出时间限制（450ms)
+#------------------------------暴力法修改-------------------------------（4500ms）通过。。。？
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        leng=len(s)
+        if leng==0:
+            return s
+        for i in range(leng):
+            for j in range(i+1):
+                new_s=s[j:j+leng-i]
+                if new_s==new_s[::-1]:
+                    return new_s
+                
+#--------------------------SecondTry,DP-1--------------------------动态规划初次实现、超出时间限制。。。。
 import numpy as np
 
 class Solution:
